@@ -1,3 +1,11 @@
 <div>
-    {{-- If your happiness depends on money, you will never be happy with yourself. --}}
+    <div>
+        <label>
+            <textarea wire:model="body" placeholder="What's up doc?"></textarea>
+        </label>
+        @error('body')
+        <span class="text-red-500 font-bold">{{ $message }}</span>
+        @enderror
+    </div>
+    <x-primary-button wire:click="tweet">Tweet</x-primary-button>
 </div>
