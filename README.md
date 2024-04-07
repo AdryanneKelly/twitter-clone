@@ -7,3 +7,4 @@
 [] Fazendo uso de Websockets para atualizar a nossa timeline  
 [] Protegendo a sua conta no twitter  
 [] Trocando mensagens entre amigos  
+

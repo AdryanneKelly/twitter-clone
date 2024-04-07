@@ -6,23 +6,21 @@
         </div>
     @endforeach
 
-    <div id="jeremias" x-data="{
-        jeremias() {
+    <div class="bg-blue-500 h-10 w-10" x-data="{
+        infinityScroll() {
             const observer = new IntersectionObserver((entries) => {
-    
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        console.log('Intersecting');
                         @this.loadMore();
                     }
                 });
+            }, {
+                threshold: 1.0, // dispara o evento quando 100% do elemento estiver visível
+                rootMargin: '100px', // disparar o evento 100px antes do elemento ficar visível
             });
             observer.observe(this.$el);
         }
-    }" x-init="jeremias()">
-        <div wire:loading>
-            Loading...
-        </div>
+    }" x-init="infinityScroll()">
 
     </div>
 </div>
